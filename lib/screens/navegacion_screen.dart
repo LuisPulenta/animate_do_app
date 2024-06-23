@@ -16,6 +16,9 @@ class NavegacionScreen extends StatelessWidget {
           backgroundColor: Colors.pink,
           centerTitle: true,
         ),
+        body: const Center(
+          child: Text("Viva la T!!!"),
+        ),
         floatingActionButton: const BotonFlotante(),
         bottomNavigationBar: const BottomNavigation(),
       ),
@@ -62,7 +65,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
     final int numero =
         Provider.of<_NotificationModel>(context, listen: false).numero;
     return BottomNavigationBar(
-      currentIndex: 0,
+      currentIndex: 2,
       selectedItemColor: Colors.pink,
       items: [
         const BottomNavigationBarItem(
