@@ -79,44 +79,40 @@ class _BottomNavigationState extends State<BottomNavigation> {
           label: 'Notifications',
           icon: Stack(
             children: [
-              Stack(
-                children: [
-                  const FaIcon(
-                    FontAwesomeIcons.bell,
-                    size: 30,
-                  ),
-                  Positioned(
-                    top: 0,
-                    right: 0,
-                    // child: Icon(
-                    //   Icons.brightness_1,
-                    //   size: 8,
-                    //   color: Colors.redAccent,
-                    // ),
-                    child: BounceInDown(
-                      from: 20,
-                      animate: numero > 0 ? true : false,
-                      child: Bounce(
-                        controller: (controller) =>
-                            Provider.of<_NotificationModel>(context)
-                                .bounceController = controller,
-                        from: 20,
-                        child: Container(
-                          width: 18,
-                          height: 18,
-                          decoration: const BoxDecoration(
-                            color: Colors.redAccent,
-                            shape: BoxShape.circle,
-                          ),
-                          child: Text('$numero',
-                              style: const TextStyle(
-                                  color: Colors.white, fontSize: 11)),
-                          alignment: Alignment.center,
-                        ),
+              const FaIcon(
+                FontAwesomeIcons.bell,
+                size: 30,
+              ),
+              Positioned(
+                top: 0,
+                right: 0,
+                // child: Icon(
+                //   Icons.brightness_1,
+                //   size: 8,
+                //   color: Colors.redAccent,
+                // ),
+                child: BounceInDown(
+                  from: 20,
+                  animate: numero > 0 ? true : false,
+                  child: Bounce(
+                    controller: (controller) =>
+                        Provider.of<_NotificationModel>(context)
+                            .bounceController = controller,
+                    from: 20,
+                    child: Container(
+                      width: 18,
+                      height: 18,
+                      decoration: const BoxDecoration(
+                        color: Colors.redAccent,
+                        shape: BoxShape.circle,
                       ),
+                      child: Text('$numero',
+                          style: const TextStyle(
+                              color: Colors.white, fontSize: 11)),
+                      alignment: Alignment.center,
                     ),
                   ),
-                ],
+                ),
               ),
             ],
           ),
