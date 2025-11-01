@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 
 class NavegacionScreen extends StatelessWidget {
-  const NavegacionScreen({Key? key}) : super(key: key);
+  const NavegacionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +16,7 @@ class NavegacionScreen extends StatelessWidget {
           backgroundColor: Colors.pink,
           centerTitle: true,
         ),
-        body: const Center(
-          child: Text("Viva la T!!!"),
-        ),
+        body: const Center(child: Text('Viva la T!!!')),
         floatingActionButton: const BotonFlotante(),
         bottomNavigationBar: const BottomNavigation(),
       ),
@@ -28,7 +26,7 @@ class NavegacionScreen extends StatelessWidget {
 
 //-------------------- BotonFlotante ----------------------
 class BotonFlotante extends StatelessWidget {
-  const BotonFlotante({Key? key}) : super(key: key);
+  const BotonFlotante({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +34,10 @@ class BotonFlotante extends StatelessWidget {
       backgroundColor: Colors.pink,
       child: const FaIcon(FontAwesomeIcons.play),
       onPressed: () {
-        final notiModel =
-            Provider.of<_NotificationModel>(context, listen: false);
+        final notiModel = Provider.of<_NotificationModel>(
+          context,
+          listen: false,
+        );
         int numero = notiModel.numero;
         numero++;
         notiModel.numero = numero;
@@ -53,7 +53,7 @@ class BotonFlotante extends StatelessWidget {
 
 //-------------------- BottomNavigation ----------------------
 class BottomNavigation extends StatefulWidget {
-  const BottomNavigation({Key? key}) : super(key: key);
+  const BottomNavigation({super.key});
 
   @override
   State<BottomNavigation> createState() => _BottomNavigationState();
@@ -62,27 +62,23 @@ class BottomNavigation extends StatefulWidget {
 class _BottomNavigationState extends State<BottomNavigation> {
   @override
   Widget build(BuildContext context) {
-    final int numero =
-        Provider.of<_NotificationModel>(context, listen: false).numero;
+    final int numero = Provider.of<_NotificationModel>(
+      context,
+      listen: false,
+    ).numero;
     return BottomNavigationBar(
       currentIndex: 2,
       selectedItemColor: Colors.pink,
       items: [
         const BottomNavigationBarItem(
           label: 'Bones',
-          icon: FaIcon(
-            FontAwesomeIcons.bone,
-            size: 30,
-          ),
+          icon: FaIcon(FontAwesomeIcons.bone, size: 30),
         ),
         BottomNavigationBarItem(
           label: 'Notifications',
           icon: Stack(
             children: [
-              const FaIcon(
-                FontAwesomeIcons.bell,
-                size: 30,
-              ),
+              const FaIcon(FontAwesomeIcons.bell, size: 30),
               Positioned(
                 top: 0,
                 right: 0,
@@ -95,9 +91,9 @@ class _BottomNavigationState extends State<BottomNavigation> {
                   from: 20,
                   animate: numero > 0 ? true : false,
                   child: Bounce(
-                    controller: (controller) =>
-                        Provider.of<_NotificationModel>(context)
-                            .bounceController = controller,
+                    controller: (controller) => Provider.of<_NotificationModel>(
+                      context,
+                    ).bounceController = controller,
                     from: 20,
                     child: Container(
                       width: 18,
@@ -106,10 +102,14 @@ class _BottomNavigationState extends State<BottomNavigation> {
                         color: Colors.redAccent,
                         shape: BoxShape.circle,
                       ),
-                      child: Text('$numero',
-                          style: const TextStyle(
-                              color: Colors.white, fontSize: 11)),
                       alignment: Alignment.center,
+                      child: Text(
+                        '$numero',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 11,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -119,10 +119,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         ),
         const BottomNavigationBarItem(
           label: 'My Dog',
-          icon: FaIcon(
-            FontAwesomeIcons.dog,
-            size: 30,
-          ),
+          icon: FaIcon(FontAwesomeIcons.dog, size: 30),
         ),
       ],
     );

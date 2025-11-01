@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class TwitterScreen extends StatefulWidget {
-  const TwitterScreen({Key? key}) : super(key: key);
+  const TwitterScreen({super.key});
 
   @override
   State<TwitterScreen> createState() => _TwitterScreenState();
@@ -15,10 +15,7 @@ class _TwitterScreenState extends State<TwitterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff1da1f2),
-      appBar: AppBar(
-        title: const Text('TwitterScreen'),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text('TwitterScreen'), centerTitle: true),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.pink,
         onPressed: () {
