@@ -17,10 +17,10 @@ class _TwitterScreenState extends State<TwitterScreen> {
       backgroundColor: const Color(0xff1da1f2),
       appBar: AppBar(title: const Text('TwitterScreen'), centerTitle: true),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.white,
         onPressed: () {
           setState(() {
-            activar = true;
+            activar = !activar;
           });
         },
         child: const FaIcon(FontAwesomeIcons.play),

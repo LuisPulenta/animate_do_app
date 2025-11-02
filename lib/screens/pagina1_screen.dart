@@ -37,7 +37,7 @@ class Pagina1Screen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  CupertinoPageRoute(
+                  MaterialPageRoute(
                     builder: (BuildContext context) => const Pagina1Screen(),
                   ),
                 );

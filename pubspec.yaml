@@ -38,6 +38,14 @@ dependencies:
   font_awesome_flutter: ^10.1.0
   provider: ^6.0.2
 
+dependency_overrides:
+  dynamic_color: ^1.8.1
+  characters: ^1.4.1
+  material_color_utilities: ^0.13.0
+  meta: ^1.17.0
+  test_api: ^0.7.7
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

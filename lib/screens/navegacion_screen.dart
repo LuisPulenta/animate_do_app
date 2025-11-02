@@ -12,7 +12,10 @@ class NavegacionScreen extends StatelessWidget {
       create: (_) => _NotificationModel(),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Notifications'),
+          title: const Text(
+            'Notifications',
+            style: TextStyle(color: Colors.white),
+          ),
           backgroundColor: Colors.pink,
           centerTitle: true,
         ),
@@ -32,7 +35,7 @@ class BotonFlotante extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       backgroundColor: Colors.pink,
-      child: const FaIcon(FontAwesomeIcons.play),
+      child: const FaIcon(FontAwesomeIcons.play, color: Colors.white),
       onPressed: () {
         final notiModel = Provider.of<_NotificationModel>(
           context,
@@ -103,11 +106,16 @@ class _BottomNavigationState extends State<BottomNavigation> {
                         shape: BoxShape.circle,
                       ),
                       alignment: Alignment.center,
-                      child: Text(
-                        '$numero',
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 11,
+                      child: FittedBox(
+                        child: Padding(
+                          padding: const EdgeInsets.all(3.0),
+                          child: Text(
+                            '$numero',
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 11,
+                            ),
+                          ),
                         ),
                       ),
                     ),
